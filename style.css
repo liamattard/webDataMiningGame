@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Oldenburg&display=swap');
+
+html, body{
+    overflow-x: hidden;
+    
+    height: 100%;
+    font-family: 'Oldenburg', cursive!important;
+    background: rgba(26,33,38,1);
+    /* background: linear-gradient(17deg, rgba(40,53,62,1) 0%, rgba(26,33,38,1) 48%); */
+    
+} 
+
+svg{
+    margin: auto;
+    display: block;
+    width: auto!important;
+    max-width: 100%!important;
+    height: auto!important;
+    max-height: 100%!important;
+}
+
+#body{
+    height: auto;
+    margin: auto;
+    display: none;
+    position: absolute!important;
+    top:0px;
+    transition: all 1s ease;  
+    
+}
+
+#intro{
+    width: 40%;
+    padding: 10px;
+    margin: auto!important;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: bisque;
+    /* display: none; */
+}
+
+#start_btn{
+    padding: 20px;
+    margin: 3vh auto;
+    background-color: rgb(226, 104, 4);
+    border-radius: 5px;
+    border: none;
+    color:  #1a2126;
+    font-size: large;
+    font-weight: bolder;
+    font-family: 'Oldenburg', cursive;
+
+    animation: shadow 1s ease-out;
+    transition: all 1s ease;
+    box-shadow: rgba(255, 115, 0, 0.3) 5px 5px, rgba(255, 115, 0, 0.2) 10px 10px, rgba(255, 115, 0, 0.1) 15px 15px, rgba(255, 115, 0, 0.05) 20px 20px, rgba(255, 115, 0, 0.01) 25px 25px;
+}
+
+
+
+#start_btn:hover{
+    cursor: pointer;
+    animation: shadow_reverse 0.5s ease-out;
+    box-shadow: rgba(255, 115, 0, 0.3) 5px 5px;
+    
+}
+
+#start_btn:focus{
+    cursor: pointer;
+    border: none!important;
+    outline:none;
+    box-shadow: rgba(255, 115, 0, 0.3) 5px 5px;
+}
+
+#start_btn:active{
+    cursor: pointer;
+    border: none!important;
+    box-shadow: none;
+    outline:none;
+}
+
+@keyframes shadow {
+    0%  {box-shadow: rgba(255, 115, 0, 0.3) 5px 5px, rgba(255, 115, 0, 0) 10px 10px, rgba(255, 115, 0, 0) 15px 15px, rgba(255, 115, 0, 0) 20px 20px, rgba(255, 115, 0, 0) 25px 25px; }
+    25% {box-shadow: rgba(255, 115, 0, 0.3) 5px 5px, rgba(255, 115, 0, 0.2) 10px 10px, rgba(255, 115, 0, 0) 15px 15px, rgba(255, 115, 0, 0) 20px 20px, rgba(255, 115, 0, 0) 25px 25px;}
+    50% {box-shadow: rgba(255, 115, 0, 0.3) 5px 5px, rgba(255, 115, 0, 0.2) 10px 10px, rgba(255, 115, 0, 0.1) 15px 15px, rgba(255, 115, 0, 0) 20px 20px, rgba(255, 115, 0, 0) 25px 25px;}
+    75% {box-shadow: rgba(255, 115, 0, 0.3) 5px 5px, rgba(255, 115, 0, 0.2) 10px 10px, rgba(255, 115, 0, 0.1) 15px 15px, rgba(255, 115, 0, 0.05) 20px 20px, rgba(255, 115, 0, 0) 25px 25px;}
+    100% {box-shadow: rgba(255, 115, 0, 0.3) 5px 5px, rgba(255, 115, 0, 0.2) 10px 10px, rgba(255, 115, 0, 0.1) 15px 15px, rgba(255, 115, 0, 0.05) 20px 20px, rgba(255, 115, 0, 0.01) 25px 25px;}
+}
+
+@keyframes shadow_reverse {  
+    0% {box-shadow: rgba(255, 115, 0, 0.3) 5px 5px, rgba(255, 115, 0, 0.2) 10px 10px, rgba(255, 115, 0, 0.1) 15px 15px, rgba(255, 115, 0, 0.05) 20px 20px, rgba(255, 115, 0, 0.01) 25px 25px;}
+    25% {box-shadow: rgba(255, 115, 0, 0.3) 5px 5px, rgba(255, 115, 0, 0.2) 10px 10px, rgba(255, 115, 0, 0.1) 15px 15px, rgba(255, 115, 0, 0.05) 20px 20px, rgba(255, 115, 0, 0) 25px 25px;}
+    50% {box-shadow: rgba(255, 115, 0, 0.3) 5px 5px, rgba(255, 115, 0, 0.2) 10px 10px, rgba(255, 115, 0, 0.1) 15px 15px, rgba(255, 115, 0, 0) 20px 20px, rgba(255, 115, 0, 0) 25px 25px;}
+    75% {box-shadow: rgba(255, 115, 0, 0.3) 5px 5px, rgba(255, 115, 0, 0.2) 10px 10px, rgba(255, 115, 0, 0) 15px 15px, rgba(255, 115, 0, 0) 20px 20px, rgba(255, 115, 0, 0) 25px 25px;}
+    100%  {box-shadow: rgba(255, 115, 0, 0.3) 5px 5px, rgba(255, 115, 0, 0) 10px 10px, rgba(255, 115, 0, 0) 15px 15px, rgba(255, 115, 0, 0) 20px 20px, rgba(255, 115, 0, 0) 25px 25px; }
+}
+.text{
+    color: transparent;
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.text_anim{
+    width: 50%;
+    animation: text_anim 7s ease;
+}
+
+@keyframes text_anim {
+    0%  {color:#ffe4c4;}
+    100% {color:bisque;transform: scale(3);opacity: 0; left:20%; top: 40%}
+}
+
+.fadeIn{
+    animation: fade_in 2s ease;
+    opacity: 1;
+}
+@keyframes fade_in {
+    0%  {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.fadeOut{
+    animation: fade_out 1s ease;
+    opacity: 0;
+}
+@keyframes fade_out {
+    0%  {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+.no_opacity{
+    opacity: 0;
+}
+
+
+#days{
+    height: 98vh;
+    width: 100px;
+    position: absolute;
+    right: 10px;
+    top: 1vh;
+    z-index: 2;
+    border-radius: 11px;
+    background: linear-gradient(145deg, #243038, #1f2930);
+    box-shadow:  6px 6px 10px #222d35,
+
+}
+
+#timeline {
+    height: 97%;
+    padding: 20px 0;
+    pointer-events: none;
+    position: fixed;
+    right: 14px;
+    top: 0;    
+    width: 75px;
+    z-index: 2;
+    background: #22282c;
+    display: flex;
+    flex-flow: column;
+    align-items: stretch;
+    text-align: center;
+    color: rgb(90, 90, 90);
+}
+span{
+    flex: 1 1 auto;
+
+}
+
+.details{
+    color: bisque;
+    padding: 10px;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+.current_day{
+    width: 100px;
+    right: 100px;
+    position: absolute;
+    color: bisque;
+    text-align: right;
+
+}
+.active{ 
+    color: bisque;
+} 
+
+#euro_sign{
+    color:rgb(131, 25, 25);
+    margin-right: 1vh;
+}
+hr{
+    border: none;
+    height: 1px;
+    color: bisque;
+    background-color: bisque;
+}
+
+.node text {
+  font-size: 10px;
+}
+
+.link {
+  fill: none;
+  stroke: rgb(77, 77, 77);
+}
+
+
+
+.meter { 
+    width:35vh;
+	height: 20px;  /* Can be anything */
+    position: relative;
+    top: 10px;
+	background: #555;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+	padding: 5px;
+	box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+}
+
+.meter > span {
+    display: block;
+    height: 100%;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    /* background-color: rgb(43,194,83);
+    background-image: linear-gradient(
+      center bottom,
+      rgb(75, 56, 243) 37%,
+      rgb(80, 221, 80) 69%
+    ); */
+    background: rgb(95, 26, 14);
+background: linear-gradient(6deg, rgb(92, 19, 19) 0%, rgb(167, 18, 18) 70%);
+    box-shadow: 
+      inset 0 2px 9px  rgba(255, 255, 255, 0.52),
+      inset 0 -2px 6px rgba(0, 0, 0, 0.705);
+    position: relative;
+    overflow: hidden;
+  }
+
+#progress_bar{
+    position: relative;
+    left: 15px;
+    top: 95%;
+    transform: rotate(270deg);
+    transform-origin: top left;
+
+}
+
+#health_label{
+    left: -10px;
+    bottom: -5px;
+    color: bisque;
+    position: absolute;
+    transform: rotate(90deg);
+    transform-origin: top left;
+}

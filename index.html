@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+    <div id="body">
+
+    </div>
+
+
+    <div id="intro">
+        <h1 id="intro_title">Urban Ministries of Durham serves over 6,000 people every year. But you'd never need help,
+            right?</h1>
+        <h1 class="text" id="0"> Over 45,000 Maltese people are unemployed</h1>
+        <h1 class="text" id="1"> Now imagine you're one of them</h1>
+        <h1 class="text" id="2"> Your savings are gone</h1>
+        <h1 class="text" id="3"> You've lost your house</h1>
+        <h1 class="text" id="4"> and you're down to your last €1,000</h1>
+        <h1 class="text" id="5"> Can you make it through the month?</h1>
+
+        <button id="start_btn" onclick="startStory()">Accept The Challenge</button>
+    </div>
+
+ 
+
+    <div id="timeline" class="timeline active">
+        <span id="current_day" class="current_day no_opacity">
+            <h5>Day</h5>
+            <hr>
+            <h1 id="date"></h1>
+        </span>
+
+        <span class="day active" id="day_1">
+            <span class="container">
+                <span class="number">1</span>
+            </span>
+        </span>
+        <span class="day" id="day_2">
+            <span class="container">
+                <span class="number">2</span>
+            </span>
+        </span>
+        <span class="day" id="day_3">
+            <span class="container">
+                <span class="number">3</span>
+            </span>
+        </span>
+        <span class="day" id="day_4">
+            <span class="container">
+                <span class="number">4</span>
+            </span>
+        </span>
+        <span class="day" id="day_5">
+            <span class="container">
+                <span class="number">5</span>
+            </span>
+        </span>
+        <span class="day" id="day_6">
+            <span class="container">
+                <span class="number">6</span>
+            </span>
+        </span>
+        <span class="day" id="day_7">
+            <span class="container">
+                <span class="number">7</span>
+            </span>
+        </span>
+        <span class="day" id="day_8">
+            <span class="container">
+                <span class="number">8</span>
+            </span>
+        </span>
+        <span class="day" id="day_9">
+            <span class="container">
+                <span class="number">9</span>
+            </span>
+        </span>
+        <span class="day" id="day_10">
+            <span class="container">
+                <span class="payday">€</span>
+                <span class="number">10</span>
+            </span>
+        </span>
+        <span class="day" id="day_11">
+            <span class="container">
+                <span class="number">11</span>
+            </span>
+        </span>
+        <span class="day" id="day_12">
+            <span class="container">
+                <span class="number">12</span>
+            </span>
+        </span>
+        <span class="day" id="day_13">
+            <span class="container">
+                <span class="number">13</span>
+            </span>
+        </span>
+        <span class="day" id="day_14">
+            <span class="container">
+                <span class="number">14</span>
+            </span>
+        </span>
+        <span class="day" id="day_15">
+            <span class="container">
+                <span class="number">15</span>
+            </span>
+        </span>
+        <span class="day" id="day_16">
+            <span class="container">
+                <span class="number">16</span>
+            </span>
+        </span>
+        <span class="day" id="day_17">
+            <span class="container">
+                <span class="payday">€</span>
+                <span class="number">17</span>
+            </span>
+        </span>
+        <span class="day" id="day_18">
+            <span class="container">
+                <span class="number">18</span>
+            </span>
+        </span>
+        <span class="day" id="day_19">
+            <span class="container">
+                <span class="number">19</span>
+            </span>
+        </span>
+        <span class="day" id="day_20">
+            <span class="container">
+                <span class="number">20</span>
+            </span>
+        </span>
+        <span class="day" id="day_21">
+            <span class="container">
+                <span class="number">21</span>
+            </span>
+        </span>
+        <span class="day" id="day_22">
+            <span class="container">
+                <span class="number">22</span>
+            </span>
+        </span>
+        <span class="day" id="day_23">
+            <span class="container">
+                <span class="number">23</span>
+            </span>
+        </span>
+        <span class="day" id="day_24">
+            <span class="container">
+                <span class="payday">€</span>
+                <span class="number">24</span>
+            </span>
+        </span>
+        <span class="day" id="day_25">
+            <span class="container">
+                <span class="number">25</span>
+            </span>
+        </span>
+        <span class="day" id="day_26">
+            <span class="container">
+                <span class="number">26</span>
+            </span>
+        </span>
+        <span class="day" id="day_27">
+            <span class="container">
+                <span class="number">27</span>
+            </span>
+        </span>
+        <span class="day" id="day_28">
+            <span class="container">
+                <span class="number">28</span>
+            </span>
+        </span>
+        <span class="day" id="day_29">
+            <span class="container">
+                <span class="number">29</span>
+            </span>
+        </span>
+        <span class="day" id="day_30">
+            <span class="container">
+                <span class="number">30</span>
+            </span>
+        </span>
+        <span class="day" id="day_final"><span class="container">1</span></span>
+    </div>
+
+
+    <div id="balance" class="details no_opacity">
+        <h5>BALANCE</h5>
+        <hr>
+        <h1><span id="euro_sign">€</span><span id="balance_value">1,000</span></h1>
+    </div>
+
+    <div id="progress_bar" class="no_opacity">
+        <h5 id="health_label">HEALTH</h5>
+
+        <div id="meter" class="meter no_opacity">
+            
+            <span id="happiness_value"></span>
+        </div>
+        
+    </div>
+
+    
+
+
+    <!-- <div class="day">
+        <h5>DAY</h5>
+        <hr>
+        <h1>2</h1>
+    </div> -->
+
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script> -->
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <!-- <script src="https://d3js.org/d3.v4.min.js"></script> -->
+
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+
+</body>
