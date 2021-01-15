@@ -2,7 +2,7 @@
 var i=0;
 var audio;
 var balance = 1000;
-var happiness = 50;
+var health = 50;
 
 function startStory(){
     document.getElementById("intro_title").classList.add("fadeOut");
@@ -34,7 +34,7 @@ function runStory(){
         document.getElementById(story).classList.add("text_anim");
 
         i++;                   
-        if (i < 6) {            
+        if (i < 2) {            
             runStory();              
         }else{
             
@@ -58,7 +58,6 @@ function removeIntro(){
     document.getElementById("current_day").classList.remove("no_opacity");
     document.getElementById("progress_bar").classList.remove("no_opacity");
     document.getElementById("meter").classList.remove("no_opacity");
-    document.getElementById("hanniness").classList.remove("no_opacity");
 
 
 
@@ -71,15 +70,22 @@ function removeIntro(){
 
     setTimeout(function(){audio.pause()},1000);
 
+    setTimeout(function(){calculate_health(20, "-"); console.log(health)},2000);
+
+
+
+
+    
+
 }
 
 
 function calculate_money(price, op){
     var current_balance = balance;
-    if(op.equals("-")){
+    if(op.localeCompare("-")){
         balance = balance-price;
     }
-    else if(op.equals("+")){
+    else if(op.localeCompare("+")){
         balance = balance+price;
     }
     // document.getElementById("balance_value").innerHTML = balance.toString();
@@ -89,14 +95,16 @@ function calculate_money(price, op){
 }
 
 
-function calculate_happiness(price, op){
-    if(op.equals("-")){
-        happiness = happiness-price;
+function calculate_health(value, op){
+    if(op.localeCompare("-")){
+        health = health-value;
     }
-    else if(op.equals("+")){
-        happiness = happiness+price;
+    else if(op.localeCompare("+")){
+        health = health+value;
     }
-    document.getElementById("happiness_value").style.width = happiness.toString()+"%";
+
+    // document.getElementById("health_value").style.transition = "all 1s";
+    document.getElementById("health_value").style.width = health.toString()+"%";
 
 }
 

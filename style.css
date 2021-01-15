@@ -265,3 +265,9 @@ background: linear-gradient(6deg, rgb(92, 19, 19) 0%, rgb(167, 18, 18) 70%);
     transform: rotate(90deg);
     transform-origin: top left;
 }
+
+
+#health_value{
+    width: 100%;
+    transition: all 1s ease;
+}
