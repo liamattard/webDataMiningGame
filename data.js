@@ -1,3 +1,5 @@
+// import { Wrap } from './test.js';
+
 var margin = {
   top: 20,
   right: 120,
@@ -81,12 +83,12 @@ var i = 0,
   body_top = 0,
   duration = 750,
   rectW = 90,
-  rectH = 50;
+  rectH = 25;
   
 document.getElementById("date").innerHTML = date.toString();
 
 
-var tree = d3.layout.tree().nodeSize([100, 70]);
+var tree = d3.layout.tree().nodeSize([200, 100]);
 var diagonal = d3.svg.diagonal()
   .projection(function (d) {
   return [d.x + rectW / 2, d.y + rectH / 2];
@@ -140,11 +142,28 @@ function update(source) {
   })
       .on("click", click);
 
+      
+
   nodeEnter.append("rect")
+      .attr("class", "title")
+
       .attr("width", rectW)
-      .attr("height", rectH)
+    //   .attr("height", "25px")
       .attr("rx", 6)
       .attr("ry", 6)
+      .attr("stroke", "gray")
+      .attr("stroke-width", 1)
+      .style("fill", "#ffff");
+
+      nodeEnter.append("rect")
+      .attr("class", "description")
+
+      .attr("width", rectW*2)
+      .attr("height", rectH*2)
+      .attr("rx", 6)
+      .attr("ry", 6)
+      .attr("x", -50)
+      .attr("y", 35)
       .attr("stroke", "gray")
       .attr("stroke-width", 1)
       .style("fill", "#ffff");
@@ -153,11 +172,16 @@ function update(source) {
   nodeEnter.append("text")
       .attr("x", rectW / 2)
       .attr("y", rectH / 2)
+      
       .attr("dy", ".35em")
       .attr("text-anchor", "middle")
+     
       .text(function (d) {
       return d.name;
-  });
+  }) 
+//   .call(Wrap.d3.util.wrap(rectW))
+  ;
+
 
   // Transition nodes to their new position.
   var nodeUpdate = node.transition()
@@ -169,6 +193,7 @@ function update(source) {
   nodeUpdate.select("rect")
       .attr("width", rectW)
       .attr("height", rectH)
+     
       .attr("rx", 6)
       .attr("ry", 6)
       .attr("stroke", "gray")
@@ -189,8 +214,8 @@ function update(source) {
   nodeExit.select("rect")
       .attr("width", rectW)
       .attr("height", rectH)
-      //.attr("width", bbox.getBBox().width)""
-      //.attr("height", bbox.getBBox().height)
+    //   .attr("width", bbox.getBBox().width)
+    //   .attr("height", bbox.getBBox().height)
       .attr("rx", 6)
       .attr("ry", 6)
       .attr("stroke", "gray")
@@ -294,4 +319,37 @@ function nextday(){
     document.getElementById("day_"+date.toString()).classList.add("active");
 
 
+}
+
+function wrap(text, width) {
+    text.each(function () {
+        var text = d3.select(this),
+            words = text.text().split(/\s+/).reverse(),
+            word,
+            line = [],
+            lineNumber = 0,
+            lineHeight = 1.1, // ems
+            x = text.attr("x"),
+            y = text.attr("y"),
+            dy = 0, //parseFloat(text.attr("dy")),
+            tspan = text.text(null)
+                        .append("tspan")
+                        .attr("x", x)
+                        .attr("y", y)
+                        .attr("dy", dy + "em");
+        while (word = words.pop()) {
+            line.push(word);
+            tspan.text(line.join(" "));
+            if (tspan.node().getComputedTextLength() > width && line.length > 1) {
+                line.pop();
+                tspan.text(line.join(" "));
+                line = [word];
+                tspan = text.append("tspan")
+                            .attr("x", x)
+                            .attr("y", y)
+                            .attr("dy", ++lineNumber * lineHeight + dy + "em")
+                            .text(word);
+            }
+        }
+    });
 }
