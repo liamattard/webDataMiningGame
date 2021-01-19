@@ -34,7 +34,7 @@ function runStory(){
         document.getElementById(story).classList.add("text_anim");
 
         i++;                   
-        if (i < 2) {            
+        if (i < 1) {            
             runStory();              
         }else{
             
@@ -96,6 +96,8 @@ function calculate_money(price, op){
 
 
 function calculate_health(value, op){
+    var current_health= health;
+
     if(op.localeCompare("-")){
         health = health-value;
     }
@@ -103,8 +105,10 @@ function calculate_health(value, op){
         health = health+value;
     }
 
-    // document.getElementById("health_value").style.transition = "all 1s";
     document.getElementById("health_value").style.width = health.toString()+"%";
+    
+    const obj = document.getElementById("health_percentage");
+    animateValue(obj, current_health, health, 5000);
 
 }
 

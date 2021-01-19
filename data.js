@@ -88,7 +88,7 @@ var i = 0,
 document.getElementById("date").innerHTML = date.toString();
 
 
-var tree = d3.layout.tree().nodeSize([200, 100]);
+var tree = d3.layout.tree().nodeSize([190, 70]);
 var diagonal = d3.svg.diagonal()
   .projection(function (d) {
   return [d.x + rectW / 2, d.y + rectH / 2];
@@ -156,8 +156,6 @@ function update(source) {
       .style("fill", "#ffff");
 
       nodeEnter.append("rect")
-      .attr("class", "description")
-
       .attr("width", rectW*2)
       .attr("height", rectH*2)
       .attr("rx", 6)
@@ -169,19 +167,91 @@ function update(source) {
       .style("fill", "#ffff");
   
 
-  nodeEnter.append("text")
+      nodeEnter.append("text")
       .attr("x", rectW / 2)
       .attr("y", rectH / 2)
-      
       .attr("dy", ".35em")
       .attr("text-anchor", "middle")
-     
       .text(function (d) {
       return d.name;
-  }) 
-//   .call(Wrap.d3.util.wrap(rectW))
-  ;
+  });
 
+  nodeEnter.append("text")
+      .attr("class", "description")
+      .attr("x", rectW / 2)
+      .attr("y", rectH*2)
+      .attr("dy", ".35em")
+      .attr("text-anchor", "middle")
+      .text(function (d) {
+      return "U aqbad u ixtri din id-dar chicken";
+  }) ;
+
+
+  nodeEnter.append("text")
+      .attr("class", "attributes")
+      .attr("x", -rectW / 3)
+      .attr("y", rectH*3.1)
+      .attr("dy", ".35em")
+      .attr("text-anchor", "middle")
+      .text(function (d) {
+      return "Health";
+  }) ;
+  nodeEnter.append("text")
+      .attr("class", "attribute_values")
+      .attr("x", -rectW / 3)
+      .attr("y", rectH*2.8)
+      .attr("dy", ".35em")
+      .attr("fill", " rgb(100, 195, 50)")
+      .attr("text-anchor", "middle")
+      .text(function (d) {
+      return "+10";
+  }) ;
+
+
+
+
+  nodeEnter.append("text")
+      .attr("class", "attributes")
+      .attr("x", "105px" )
+      .attr("y", rectH*3.1)
+      .attr("dy", ".35em")
+      .attr("text-anchor", "middle")
+      .text(function (d) {
+      return "Happiness";
+  }) ;
+  nodeEnter.append("text")
+      .attr("class", "attribute_values")
+      .attr("x", "105px" )
+      .attr("y", rectH*2.8)
+      .attr("dy", ".35em")
+      .attr("fill", " rgb(131, 25, 25)")
+      .attr("text-anchor", "middle")
+      .text(function (d) {
+      return "-10";
+  }) ;
+
+
+ 
+
+  nodeEnter.append("text")
+  .attr("class", "attributes")
+  .attr("x", rectW / 2.3)
+  .attr("y", rectH*3.1)
+  .attr("dy", ".35em")
+  .attr("text-anchor", "middle")
+  .text(function (d) {
+  return "Money";
+ }) ;
+ nodeEnter.append("text")
+ .attr("class", "attribute_values")
+ .attr("x", rectW / 2.3)
+ .attr("y", rectH*2.8)
+ .attr("dy", ".35em")
+ .attr("text-anchor", "middle")
+ .attr("fill", "rgb(100, 195, 50)")
+ .text(function (d) {
+ return "+10";
+}) ;
 
   // Transition nodes to their new position.
   var nodeUpdate = node.transition()
